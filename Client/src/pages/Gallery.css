@@ -1,0 +1,70 @@
+.slider {
+  background: linear-gradient(
+    90deg,
+    rgb(231, 217, 155) 30%,
+    rgba(209, 161, 73, 0) 100%
+  );
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 920px;
+  height: 530px;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  top: 100px;
+  border-radius: 10px;
+}
+
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  font-size: 3rem;
+  color: black;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  font-size: 3rem;
+  color: black;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
+}
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:900i&display=swap");
+
+.titles {
+  position: absolute;
+  top: 84%;
+  left: 20%;
+
+  width: 1000px;
+  /* transform: translate(50%, -50%); */
+  font-size: 100px;
+  letter-spacing: 0.1em;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: white;
+  text-shadow: 7.5px 3px #e7a428, 13.5px 8px #000000;
+}
