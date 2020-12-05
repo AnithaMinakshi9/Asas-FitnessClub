@@ -36,7 +36,8 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const cards_t = [1, 2, 3, 4, 5, 6, 7, 8];
+const cards_n = [1, 2, 3, 4];
 
 export default function Album() {
   const classes = useStyles();
@@ -72,15 +73,36 @@ export default function Album() {
         </div>
         <Container className={classes.cardGrid} maxWidth="md">
           <Grid container spacing={4}>
-            {cards.map((card) => (
+            {cards_t.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Trainer
+                      Trainer {card}
                     </Typography>
                     <Typography>
                       Trainer description
+                      <br />
+                      We strive to help you become a better you!
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+
+        <Container className={classes.cardGrid} maxWidth="md">
+          <Grid container spacing={4}>
+            {cards_n.map((card) => (
+              <Grid item key={card} xs={12} sm={6} md={4}>
+                <Card className={classes.card}>
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Nutritionist {card}
+                    </Typography>
+                    <Typography>
+                      Nutritionist description
                       <br />
                       We strive to help you become a better you!
                     </Typography>
@@ -94,118 +116,3 @@ export default function Album() {
     </React.Fragment>
   );
 }
-
-/*  import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
-import "../Cards/cards.css";
-
-const useStyles = makeStyles({
-  root: {
-    marginLeft: 40,
-    maxWidth: 260,
-    background: "linear-gradient(to right, #e4b639d2,#ffa)"
-  },
-  pos: {
-    marginBottom: 15
-  }
-});
-
-export default function OutlinedCard() {
-  const classes = useStyles();
-
-  return (
-    <>
-      <div className="main">
-        <h1 className="tra">OUR TRAINERS</h1>
-        <div className="card1">
-          <Card className={classes.root} variant="outlined">
-            <CardContent>
-              <Typography className={classes.pos} color="textSecondary">
-                Trainer1
-                
-              </Typography>
-              <Typography variant="body2" component="p">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-                tincidunt semper mauris, et ullamcorper dui mattis in. Nullam
-                egestas ligula ipsum, ut vulputate mauris luctus sed. Curabitur
-                congue ultricies elit, eu convallis magna sagittis in. Nam
-                vehicula felis non erat ornare faucibus a vel lectus. Sed
-                rhoncus quam lorem. s, sed pulvinar lacus.
-              </Typography>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="card2">
-          <Card className={classes.root} variant="outlined">
-            <CardContent>
-              <Typography className={classes.pos} color="textSecondary">
-                Trainer2
-              </Typography>
-              <Typography variant="body2" component="p">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-                tincidunt semper mauris, et ullamcorper dui mattis in. Nullam
-                egestas ligula ipsum, ut vulputate mauris luctus sed. Curabitur
-                congue ultricies elit, eu convallis magna sagittis in. Nam
-                vehicula felis non erat ornare faucibus a vel lectus. Sed
-                rhoncus quam lorem. s, sed pulvinar lacus.
-              </Typography>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="card3">
-          <Card className={classes.root} variant="outlined">
-            <CardContent>
-              <Typography className={classes.pos} color="textSecondary">
-                Trainer2
-              </Typography>
-              <Typography variant="body2" component="p">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-                tincidunt semper mauris, et ullamcorper dui mattis in. Nullam
-                egestas ligula ipsum, ut vulputate mauris luctus sed. Curabitur
-                congue ultricies elit, eu convallis magna sagittis in. Nam
-                vehicula felis non erat ornare faucibus a vel lectus. Sed
-                rhoncus quam lorem. s, sed pulvinar lacus.
-              </Typography>
-            </CardContent>
-          </Card>
-        </div>
-
-        <h1 className="nut">OUR NUTRITIONISTS</h1>
-        <div className="card4">
-          <Card className={classes.root} variant="outlined">
-            <CardContent>
-              <Typography className={classes.pos} color="textSecondary">
-                Nutritionist1
-              </Typography>
-              <Typography variant="body2" component="p">
-                Curabitur congue ultricies elit, eu convallis magna sagittis in.
-                Nam vehicula felis non erat ornare faucibus a vel lectus. Sed
-                rhoncus quam lorem. s, sed pulvinar lacus.
-              </Typography>
-            </CardContent>
-          </Card>
-        </div>
-        <div className="card6">
-          <Card className={classes.root} variant="outlined">
-            <CardContent>
-              <Typography className={classes.pos} color="textSecondary">
-                Nutritionist2
-              </Typography>
-              <Typography variant="body2" component="p">
-                Nullam egestas ligula ipsum, ut vulputate mauris luctus sed.
-                Curabitur congue convallis magna sagittis in. Nam vehicula felis
-                non erat ornare faucibus a vel lectus.
-              </Typography>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-    </>
-  );
-}
-  */

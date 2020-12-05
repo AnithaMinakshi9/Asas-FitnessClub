@@ -60,10 +60,11 @@ const Login = ({ submitForm }) => {
               />
               {errors.password && <p>{errors.password}</p>}
             </div>
-
-            <button className="form-input-btn" type="submit" onclick="/user">
-              Login
-            </button>
+            <Link to="/user">
+              <button className="form-input-btn" type="submit">
+                Login
+              </button>
+            </Link>
 
             <span className="form-input-login">
               New to the page? Signup here! <Link to="/form">here</Link>

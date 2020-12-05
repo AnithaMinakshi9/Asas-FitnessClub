@@ -6,6 +6,9 @@ import Drawer from "@material-ui/core/Drawer";
 import Box from "@material-ui/core/Box";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
+import Table from "@material-ui/core/Table";
+import TableCell from "@material-ui/core/TableCell";
+import TableRow from "@material-ui/core/TableRow";
 import List from "@material-ui/core/List";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
@@ -18,8 +21,11 @@ import Link from "@material-ui/core/Link";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import { mainListItems, secondaryListItems } from "./listItems";
+import { mainListItems } from "./listItems";
 import Chart from "./Chart";
+import Member from "./Membership";
+import { BsPersonSquare } from "react-icons/bs";
+import Title from "./Title";
 
 function Copyright() {
   return (
@@ -129,6 +135,7 @@ export default function Dashboard() {
 
   return (
     <div className={classes.root}>
+      <br />
       <CssBaseline />
       <AppBar
         position="absolute"
@@ -182,12 +189,12 @@ export default function Dashboard() {
         <Divider />
         <List>{mainListItems}</List>
         <Divider />
-        <List>{secondaryListItems}</List>
       </Drawer>
 
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <br />
+
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={4}>
             {/* Chart */}
@@ -196,10 +203,85 @@ export default function Dashboard() {
                 <Chart />
               </Paper>
             </Grid>
+            <Grid item xs={12} md={4} lg={3}>
+              <Paper className={fixedHeightPaper}>
+                <BsPersonSquare size="220" />
+                <Typography component="h1" variant="h6" align="center">
+                  USER1
+                </Typography>
+              </Paper>
+            </Grid>
 
-            {/* Recent Orders */}
             <Grid item xs={12}>
-              <Paper className={classes.paper}>hi</Paper>
+              <Paper className={classes.paper}>
+                <Member />
+              </Paper>
+              <CssBaseline />
+            </Grid>
+          </Grid>
+          <Grid container spacing={4}>
+            <Grid item xs={12} md={4}>
+              <Paper className={classes.paper}>
+                <form>
+                  <Table size="small">
+                    <Title>Choice of Workout</Title>
+                    <TableRow>
+                      <TableCell>
+                        <label name="yoga">Yoga</label>
+                      </TableCell>
+                      <TableCell>
+                        <input type="checkbox" placeholder="yoga" name="yoga" />
+                      </TableCell>
+                    </TableRow>
+
+                    <TableRow>
+                      <TableCell>
+                        <label name="HIIT">HIIT</label>
+                      </TableCell>
+                      <TableCell>
+                        <input type="checkbox" placeholder="HIIT" name="HIIT" />
+                      </TableCell>
+                    </TableRow>
+
+                    <TableRow>
+                      <TableCell>
+                        <label name="Cardio">Cardio</label>
+                      </TableCell>
+                      <TableCell>
+                        <input
+                          type="checkbox"
+                          placeholder="Cardio"
+                          name="Cardio"
+                        />
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>
+                        <label name="st">Strength training</label>
+                      </TableCell>
+                      <TableCell>
+                        <input
+                          type="checkbox"
+                          placeholder="Strength training"
+                          name="st"
+                        />
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell>
+                        <label name="Pilates">Pilates</label>
+                      </TableCell>
+                      <TableCell>
+                        <input
+                          type="checkbox"
+                          placeholder="Pilates"
+                          name="Pilates"
+                        />
+                      </TableCell>
+                    </TableRow>
+                  </Table>
+                </form>
+              </Paper>
             </Grid>
           </Grid>
           <Box pt={4}>

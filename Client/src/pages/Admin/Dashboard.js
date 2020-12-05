@@ -21,7 +21,7 @@ import NotificationsIcon from "@material-ui/icons/Notifications";
 import { mainListItems, secondaryListItems } from "./listItems";
 import Chart from "./Chart";
 import NewClients from "./Newclients";
-import Orders from "./Order";
+import Member from "./Memberships";
 
 function Copyright() {
   return (
@@ -192,22 +192,21 @@ export default function Dashboard() {
         <br />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={4}>
-            {/* Chart */}
             <Grid item xs={12} md={8} lg={9}>
               <Paper className={fixedHeightPaper}>
                 <Chart />
               </Paper>
             </Grid>
-            {/* Recent NewClients */}
+
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
                 <NewClients />
               </Paper>
             </Grid>
-            {/* Recent Orders */}
+
             <Grid item xs={12}>
               <Paper className={classes.paper}>
-                <Orders />
+                <Member />
               </Paper>
             </Grid>
           </Grid>

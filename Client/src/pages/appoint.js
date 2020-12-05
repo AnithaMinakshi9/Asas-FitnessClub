@@ -12,7 +12,8 @@ import axios from "axios";
 export default function AlertDialog() {
   const [open, setOpen] = React.useState(false);
   const [values, setValues] = useState({
-    datetime: "",
+    date: "",
+    time: "",
     email: ""
   });
   const handleClickOpen = () => {
@@ -29,13 +30,13 @@ export default function AlertDialog() {
     e.preventDefault();
 
     const userObject = {
-      date: values.datetime,
-      time: values.datetime,
+      date: values.date,
+      time: values.time,
       email: values.email
     };
     axios
       .post(
-        "https://fitness-management.herokuapp.com/schedules/formresult",
+        "https://fitness-management.herokuapp.com/schedule/formresult",
         userObject
       )
       .then((res) => {
@@ -71,18 +72,34 @@ export default function AlertDialog() {
         <DialogTitle id="dialog-title">{"Book An Appointment"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="dialog-description">
-            Choose a date and time according to your convienience!
+            Choose a date and time according to your convenience!
           </DialogContentText>
         </DialogContent>
         <form className={classes.container} noValidate>
           <TextField
             id="datetime"
-            label="Next appointment"
-            type="datetime-local"
-            value={values.datetime}
+            label="Next session"
+            type="date"
+            value={values.date}
             className={classes.textField}
+            onChange={handleChange}
             InputLabelProps={{
               shrink: true
+            }}
+          />
+          <TextField
+            id="time"
+            label="Time"
+            type="time"
+            defaultValue="07:30"
+            value={values.time}
+            className={classes.textField}
+            onChange={handleChange}
+            InputLabelProps={{
+              shrink: true
+            }}
+            inputProps={{
+              step: 300 // 5 min
             }}
           />
           <TextField
