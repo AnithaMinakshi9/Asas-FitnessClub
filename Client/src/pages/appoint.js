@@ -62,14 +62,14 @@ export default function AlertDialog() {
   return (
     <div>
       <Button variant="contained" color="default" onClick={handleClickOpen}>
-        Book an Appointment
+        Select a Session
       </Button>
       <Dialog
         open={open}
         aria-labelledby="dialog-title"
         aria-describedby="dialog-description"
       >
-        <DialogTitle id="dialog-title">{"Book An Appointment"}</DialogTitle>
+        <DialogTitle id="dialog-title">{"Select a Session"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="dialog-description">
             Choose a date and time according to your convenience!
